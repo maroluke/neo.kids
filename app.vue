@@ -1,7 +1,7 @@
 <template>
   <div class="container fade-in">
     <a href="mailto:hello@neo.kids">
-      <img src="/neo-kids-logo-h-white-001.png" alt="neo.kids" />
+      <img src="/neo-kids-logo-v-white-001.png" alt="neo.kids" />
     </a>
   </div>
 
@@ -22,7 +22,7 @@
 <style>
 img {
   width: 100%;
-  max-width: 400px;
+  max-width: 280px;
   padding: 0 40px;
   box-sizing: border-box;
 }
@@ -104,7 +104,7 @@ h1::after {
 }
 
 .grid-container {
-  --grid: 10rem;
+  --grid: 5rem;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -114,11 +114,12 @@ h1::after {
   perspective: 100rem;
   -webkit-animation: rotate 100s linear infinite forwards;
   animation: rotate 100s linear infinite forwards;
+  z-index: -10;
 }
 .grid-container .plane {
   --dir: 1;
-  width: 300%;
-  height: 150%;
+  width: 400%;
+  height: 200%;
   min-height: 70rem;
   position: absolute;
   bottom: 0;
@@ -158,16 +159,16 @@ h1::after {
 .grid-container .plane > *::before {
   background-image: repeating-linear-gradient(
       to left,
-      green,
-      green 4px,
-      transparent 4px,
+      #00c7be,
+      #00c7be 3px,
+      transparent 3px,
       transparent var(--grid)
     ),
     repeating-linear-gradient(
       to bottom,
-      green,
-      green 4px,
-      transparent 4px,
+      #00c7be,
+      #00c7be 3px,
+      transparent 3px,
       transparent var(--grid)
     );
   -webkit-animation: move 1s linear infinite forwards;
