@@ -1,0 +1,108 @@
+<script lang="ts" setup></script>
+
+<template>
+  <div class="bg">
+    <div class="z-3">
+      <div class="tile top-left animate-opacity freq-5"></div>
+      <div class="tile top-right animate-opacity freq-9"></div>
+      <div class="tile bottom-left animate-opacity freq-7"></div>
+      <div class="tile bottom-right animate-opacity freq-10"></div>
+    </div>
+    <div class="z-2">
+      <div class="tile top-left animate-opacity freq-9 delay-2"></div>
+      <div class="tile top-right animate-opacity freq-5 delay-2"></div>
+      <div class="tile bottom-left animate-opacity freq-6 delay-4"></div>
+      <div class="tile bottom-right animate-opacity freq-10 delay-4"></div>
+    </div>
+    <div class="z-1">
+      <div class="tile top-left animate-opacity freq-7 delay-2"></div>
+      <div class="tile top-right animate-opacity freq-5 delay-4"></div>
+      <div class="tile bottom-left animate-opacity freq-9 delay-2"></div>
+      <div class="tile bottom-right animate-opacity freq-5 delay"></div>
+    </div>
+  </div>
+</template>
+
+<style>
+@keyframes slide-transparency {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.animate-opacity {
+  animation-name: slide-transparency;
+  animation-iteration-count: infinite;
+}
+.freq-5 {
+  animation-duration: 5s;
+}
+.freq-6 {
+  animation-duration: 6.33s;
+}
+.freq-7 {
+  animation-duration: 7s;
+}
+.freq-8 {
+  animation-duration: 8.88s;
+}
+.freq-9 {
+  animation-duration: 9s;
+}
+.freq-10 {
+  animation-duration: 10.17s;
+}
+.delay-2 {
+  animation-delay: 1.33s;
+}
+.delay-4 {
+  animation-delay: 2.11s;
+}
+.bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: -1000;
+}
+.z-1,
+.z-2,
+.z-3 {
+  position: absolute;
+  width: 150vw;
+  height: 150vw;
+  left: -50vw;
+  top: -50vw;
+  transform-origin: center;
+}
+.tile {
+  overflow: hidden;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  background-size: 512px 512px;
+}
+.top-left {
+  background-image: url("./img/topleft.png");
+}
+.top-right {
+  background-image: url("./img/topright.png");
+}
+.bottom-left {
+  background-image: url("./img/bottomleft.png");
+}
+.bottom-right {
+  background-image: url("./img/bottomright.png");
+}
+</style>
