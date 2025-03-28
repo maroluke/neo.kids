@@ -25,7 +25,7 @@ html {
   top: 0;
   left: 0;
   transform: scale(calc(100vw / 2000));
-  transform-origin: top left;
+  transform-origin: top right;
 }
 
 /* Change the base dimensions from 1px/2px/3px to 2000px */

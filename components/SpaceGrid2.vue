@@ -26,7 +26,7 @@
 
 .bottom {
   perspective: 14.5rem;
-  flex: 0 0 29rem;
+  flex: 0 0 59rem;
   position: relative;
   width: 100%;
   box-sizing: border-box;
@@ -72,6 +72,48 @@
 
   .bottom:after {
     transform: rotateX(53deg) scale(1.8) translateZ(15px);
+  }
+}
+
+@media (min-width: 577px and max-width: 1024px) {
+  .bottom {
+    flex: 0 0 24rem;
+  }
+
+  .bottom:before {
+    transform: rotateX(53deg) scale(1.8) translateZ(35px);
+  }
+
+  .bottom:after {
+    transform: rotateX(53deg) scale(1.8) translateZ(35px);
+  }
+}
+
+@media (min-width: 1025px and max-width: 1280px) {
+  .bottom {
+    flex: 0 0 34rem;
+  }
+
+  .bottom:before {
+    transform: rotateX(53deg) scale(1.8) translateZ(75px);
+  }
+
+  .bottom:after {
+    transform: rotateX(53deg) scale(1.8) translateZ(75px);
+  }
+}
+
+@media (min-width: 1281px and max-width: 1536px) {
+  .bottom {
+    flex: 0 0 54rem;
+  }
+
+  .bottom:before {
+    transform: rotateX(53deg) scale(1.8) translateZ(105px);
+  }
+
+  .bottom:after {
+    transform: rotateX(53deg) scale(1.8) translateZ(105px);
   }
 }
 

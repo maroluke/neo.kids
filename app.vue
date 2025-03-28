@@ -1,7 +1,7 @@
 <script lang="ts" setup></script>
 <template>
   <div class="bg-black">
-    <NightSky />
+    <NightSky2 />
     <SpaceGrid2
       class="absolute bottom-40 left-0 flex flex-col items-end justify-end"
     />
@@ -24,11 +24,6 @@
 </template>
 
 <style scoped>
-.masked-logo {
-  mask: url(#myMask);
-  -webkit-mask: url(#myMask);
-}
-
 img {
   width: 100%;
   max-width: 280px;
