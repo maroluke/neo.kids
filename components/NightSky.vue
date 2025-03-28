@@ -1,9 +1,11 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div id="stars"></div>
-  <div id="stars2"></div>
-  <!-- <div id="stars3"></div> -->
+  <div>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <!-- <div id="stars3"></div> -->
+  </div>
 </template>
 
 <style>
@@ -12,6 +14,44 @@ html {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   overflow: hidden;
 }
+
+#stars,
+#stars:after,
+#stars2,
+#stars2:after,
+#stars3,
+#stars3:after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: scale(calc(100vw / 2000));
+  transform-origin: top left;
+}
+
+/* Change the base dimensions from 1px/2px/3px to 2000px */
+#stars {
+  width: 2000px;
+  height: 2000px;
+  background: transparent;
+  box-shadow: 885px 1784px #fff, 1041px 439px #fff, 1086px 1021px #fff,
+    1070px 1377px #fff, 1887px 285px #fff, 1991px 993px #fff, 1293px 1836px #fff,
+    /* …other coordinates… */ 734px 108px #fff;
+  animation: animStar 100s linear infinite;
+}
+
+#stars:after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 2000px;
+  height: 2000px;
+  background: transparent;
+  box-shadow: 885px 1784px #fff, 1041px 439px #fff, 1086px 1021px #fff,
+    1070px 1377px #fff, 1887px 285px #fff, 1991px 993px #fff, 1293px 1836px #fff,
+    /* …other coordinates… */ 734px 108px #fff;
+}
+
+/* Do similarly for #stars2 and #stars3 if their box-shadow coordinates are based on a 2000px canvas */
 
 #stars {
   width: 1px;
@@ -194,7 +234,7 @@ html {
     1166px 144px #fff, 716px 155px #fff, 663px 1197px #fff, 34px 310px #fff,
     1172px 1721px #fff, 711px 14px #fff, 1544px 1278px #fff, 1851px 77px #fff,
     1454px 1326px #fff, 1293px 835px #fff, 734px 108px #fff;
-  animation: animStar 50s linear infinite;
+  animation: animStar 100s linear infinite;
 }
 #stars:after {
   content: " ";
@@ -437,7 +477,7 @@ html {
     897px 1392px #fff, 1059px 423px #fff, 514px 809px #fff, 1259px 746px #fff,
     1717px 1158px #fff, 1516px 1804px #fff, 1856px 1630px #fff,
     180px 1004px #fff, 1068px 217px #fff, 1095px 1868px #fff, 1120px 1280px #fff;
-  animation: animStar 100s linear infinite;
+  animation: animStar 150s linear infinite;
 }
 #stars2:after {
   content: " ";
@@ -529,7 +569,7 @@ html {
     1240px 965px #fff, 689px 1130px #fff, 551px 79px #fff, 1486px 538px #fff,
     1453px 1309px #fff, 446px 1565px #fff, 968px 317px #fff, 273px 144px #fff,
     902px 229px #fff, 925px 409px #fff;
-  animation: animStar 150s linear infinite;
+  animation: animStar 200s linear infinite;
 }
 #stars3:after {
   content: " ";
@@ -566,32 +606,12 @@ html {
     902px 229px #fff, 925px 409px #fff;
 }
 
-#title {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  color: #fff;
-  text-align: center;
-  font-family: "lato", sans-serif;
-  font-weight: 300;
-  font-size: 50px;
-  letter-spacing: 10px;
-  margin-top: -60px;
-  padding-left: 10px;
-}
-#title span {
-  background: -webkit-linear-gradient(white, #38495a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 @keyframes animStar {
   from {
     transform: translateY(0px);
   }
   to {
-    transform: translateY(-2000px);
+    transform: translateY(-1000px);
   }
 }
 </style>
