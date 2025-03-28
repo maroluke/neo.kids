@@ -1,6 +1,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "nuxt-lucide-icons"],
+  modules: ["@nuxtjs/tailwindcss"],
   css: ["~/assets/css/main.css"],
+  ssr: true,
 });

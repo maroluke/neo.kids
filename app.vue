@@ -1,16 +1,4 @@
-<script lang="ts" setup>
-const toggleMusic = () => {
-  const audio = document.getElementById("audio") as HTMLAudioElement;
-  if (audio.paused) {
-    audio.play();
-    isPlaying.value = true; // Update the reactive variable
-  } else {
-    audio.pause();
-    isPlaying.value = false; // Update the reactive variable
-  }
-};
-const isPlaying = ref(false);
-</script>
+<script lang="ts" setup></script>
 <template>
   <div class="bg-black">
     <NightSky />
@@ -25,23 +13,13 @@ const isPlaying = ref(false);
         class="flex flex-col justify-center items-center w-60"
         href="mailto:hello@neo.kids"
       >
-        <SVGLogoColored />
+        <SVGLogoColored class="w-32 sm:w-full" />
       </a>
+
+      <MusicButton />
     </div>
 
     <div class="fade-overlay">&nbsp;</div>
-
-    <audio id="audio" src="/audio/neon-gaming-128925.mp3" loop></audio>
-
-    <!-- a button that play/stop music from a mp3 file -->
-    <button
-      class="absolute top-0 right-0 p-4 text-white z-50"
-      @click="toggleMusic"
-      :aria-label="isPlaying ? 'Pause music' : 'Play music'"
-      :class="isPlaying ? 'text-red-500' : 'text-white'"
-    >
-      <LucideVolume2 />
-    </button>
   </div>
 </template>
 
@@ -65,7 +43,7 @@ img {
   width: 100%;
   height: 100%;
   background-color: black;
-  z-index: 3000;
+  z-index: 30;
   animation: fadeOut 2s ease-out forwards;
 }
 
